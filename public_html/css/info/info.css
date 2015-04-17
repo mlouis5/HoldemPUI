@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 16, 2015, 2:02:22 PM
+    Author     : Mac
+*/
+
+#info{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border: 1px solid green;
+    margin-bottom: 15px;
+}
+
+.p-name{
+    border: 1px solid red;
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#timer{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+}
