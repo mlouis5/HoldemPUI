@@ -9,6 +9,126 @@ and open the template in the editor.
 */
 #option{
     width: 100%;
-    height: 80px;
+    height: 120px;
     border: 1px solid blue;
+}
+
+#signInDialog{
+    width: 240px;
+    height: 315px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+#signInBanner{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 272px;
+    height: 30px;
+    line-height: 30px;
+    color: #f0f0f0;
+    font-weight: 400;
+    background-image: -webkit-linear-gradient(top, #E44E36, #B73D2B);
+    background-image: -moz-linear-gradient(top, #E44E36, #B73D2B);
+    background-image: -ms-linear-gradient(top, #E44E36, #B73D2B);
+    background-image: -o-linear-gradient(top, #E44E36, #B73D2B);
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.60);
+    -moz-box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.60);
+    box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.60);
+}
+
+.register-dialog-input{
+    width: 226px;
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    height: 35px;
+    font-size: 18px;
+    font-family: helvitica;
+}
+.register-dialog-input:focus{
+    -webkit-box-shadow: 2px 3px 1px 1px rgba(0,0,0,0.60);
+    -moz-box-shadow: 2px 3px 1px 1px rgba(0,0,0,0.60);
+    box-shadow: 2px 3px 1px 1px rgba(0,0,0,0.60);
+    transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out;
+}
+
+#create-dialog-button{
+    width: 90px;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #E44E36, #B73D2B);
+    background-image: -moz-linear-gradient(top, #E44E36, #B73D2B);
+    background-image: -ms-linear-gradient(top, #E44E36, #B73D2B);
+    background-image: -o-linear-gradient(top, #E44E36, #B73D2B);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 18px;
+    float: left;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+#create-dialog-button:hover{
+    cursor: pointer;
+}
+#create-dialog-button:focus{
+    border: 1px solid #0f0f0f;
+}
+#create-dialog-button:active{
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #B73D2B, #E44E36);
+    background-image: -moz-linear-gradient(top, #B73D2B, #E44E36);
+    background-image: -ms-linear-gradient(top, #B73D2B, #E44E36);
+    background-image: -o-linear-gradient(top, #B73D2B, #E44E36);
+    text-decoration: none;
+}
+
+#register-dialog-button{
+    width: 130px;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #7CCE88, #43954E);
+    background-image: -moz-linear-gradient(top, #7CCE88, #43954E);
+    background-image: -ms-linear-gradient(top, #7CCE88, #43954E);
+    background-image: -o-linear-gradient(top, #7CCE88, #43954E);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 18px;
+    float: right;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+#register-dialog-button:hover{
+    cursor: pointer;
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #7CCE88, #57AB5E);
+    background-image: -moz-linear-gradient(top, #7CCE88, #57AB5E);
+    background-image: -ms-linear-gradient(top, #7CCE88, #57AB5E);
+    background-image: -o-linear-gradient(top, #7CCE88, #57AB5E);
+    text-decoration: none;    
+    
+}
+#register-dialog-button:focus{
+    border: 1px solid #0f0f0f;
+}
+#register-dialog-button:active{
+    cursor: pointer;
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #43954E, #7CCE88);
+    background-image: -moz-linear-gradient(top, #43954E, #7CCE88);
+    background-image: -ms-linear-gradient(top, #43954E, #7CCE88);
+    background-image: -o-linear-gradient(top, #43954E, #7CCE88);
+    text-decoration: none;
 }

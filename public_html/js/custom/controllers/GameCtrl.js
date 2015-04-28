@@ -9,6 +9,8 @@
     var hal = angular.module('HoldemApp');
 
     function GameController($scope, $rootScope, sharedService) {
+
+
 //        init();
 //
 //        function init() {
@@ -220,13 +222,18 @@
                 }
             }
         };
-        
+
         $rootScope.$on('gameState', function (event, updatedValues) {
             $scope.gameState = updatedValues.gameState;
             $scope.$apply();
-            console.log("MODEL:");
+            console.log("GameState:");
             console.log($scope.gameState);
         });
+
+        var square = new ProgressBar.Square('#user', {
+            strokeWidth: 2,
+            duration: 1200
+        }).a;
     }
 
     hal.controller('GameCtrl', ["$scope", "$rootScope", "sharedService", GameController]);

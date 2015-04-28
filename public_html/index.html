@@ -20,6 +20,8 @@ and open the template in the editor.
         <div id="info">
             <div class="p-name"></div>
             <div id="timer" data-timer="60"></div>
+            
+            <div id="progress"></div>
         </div>
 
 
@@ -43,19 +45,32 @@ and open the template in the editor.
                     </div>
                     
                 </div>
-                <div class="p-space"></div>
+                <div class="p-space" id="user"></div>
             </div>
         </div>
 
 
         <div id="option">option div</div>
         
+        <dialog id="signInDialog">
+            <span id="signInBanner">Sign In</span>
+            <input class="register-dialog-input" id="register-email" type="email" placeholder="Email" required/>
+            <input class="register-dialog-input" id="register-fname" type="text" placeholder="First Name" required/>
+            <input class="register-dialog-input" id="register-lname" type="text" placeholder="Last Name" required/>
+            <input class="register-dialog-input" id="register-code" type="text" placeholder="Game Code" required/>
+            <input type="button" id="create-dialog-button" value="Create"/>
+            <input type="button" id="register-dialog-button" value="Play"/>
+        </dialog>
+        
         <script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/libs/progressbar/progressbar.min.js"></script>
         <script type="text/javascript" src="js/libs/angular/angular.js"></script>
-        <script type="text/javascript" src="js/libs/angular/angular-route.js"></script>
+        <script type="text/javascript" src="js/libs/angular/angular-route.js"></script>        
+        <script type="text/javascript" src="js/libs/md5/md5.js"></script>
         <script type="text/javascript" src="js/custom/main.js"></script>
         <script type="text/javascript" src="js/custom/controllers/GameCtrl.js"></script>
         <script type="text/javascript" src="js/libs/timecircles/TimeCircles.js"></script>
         <script type="text/javascript" src="js/custom/test/test.js"></script>
+        
     </body>
 </html>
