@@ -53,6 +53,9 @@
                             dialog = undefined;
                             sharedService.broadCastGameState(gameState);
                         };
+                        socket.onerror = function(evt){
+                            console.log(evt.data);
+                        }
                     }
                 }
                 return isSocketSet;
