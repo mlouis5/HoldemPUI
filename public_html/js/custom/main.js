@@ -29,11 +29,12 @@
                         isSocketSet = true;
 
                         socket.onmessage = function (evt) {
-                            gameState = evt.data;
-                            if (gameState) {
-                                dialog.close();
+                            gameState = JSON.parse(evt.data);
+                            console.log(gameState)
+                            if (gameState !== undefined) {
+                                $(dialog).fadeOut(600, closeDialog);
+                                sharedService.broadCastGameState(gameState);
                             }
-                            sharedService.broadCastGameState(sharedService.gameState);
                         };
                         socket.onopen = function () {
 //                            socket.send({
@@ -53,9 +54,9 @@
                             dialog = undefined;
                             sharedService.broadCastGameState(gameState);
                         };
-                        socket.onerror = function(evt){
+                        socket.onerror = function (evt) {
                             console.log(evt.data);
-                        }
+                        };
                     }
                 }
                 return isSocketSet;
@@ -63,12 +64,13 @@
 
             sharedService.register = function () {
                 socket.send(JSON.stringify({
-                    header: 'sign in',
+                    header: 'sign_in',
+                    pid: pId,
                     payload: {
                         email: email,
                         fName: fName,
                         lName: lName,
-                        gameId: gameCode                        
+                        gameId: gameCode
                     }
                 }));
             };
@@ -83,14 +85,23 @@
             };
 
             sharedService.broadCastGameState = function (state) {
-                $rootScope.$broadcast("'gameState'", {
+                $rootScope.$broadcast('gameState', {
                     gameState: state
+                });
+            };
+            sharedService.broadCastPInfo = function () {
+                $rootScope.$broadcast('pInfo', {
+                    pid: pId,
+                    email: email,
+                    fName: fName,
+                    lName: lName
                 });
             };
 
             var signIn = function (email, fName, lName, gameCode) {
                 if (pId === undefined) {
-                    pId = md5(email + fName + lName + gameCode);
+                    pId = md5(fName + lName + email);
+                    sharedService.broadCastPInfo();
                     console.log("PID: " + pId);
                     sharedService.connect(sharedService.register);
                 }
@@ -116,9 +127,17 @@
             init();
             function init() {
                 if (pId === undefined) {
-                    dialog = document.getElementById("signInDialog").showModal();
+                    dialog = document.getElementById("signInDialog");
+                    dialog.showModal();
+                    console.log("dialog");
+                    console.log(dialog);
                     sharedService.initSignInButton();
                 }
+            }
+
+            function closeDialog() {
+                dialog.close();
+                dialog = undefined;
             }
             return sharedService;
         }]);

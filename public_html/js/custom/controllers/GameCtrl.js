@@ -17,217 +17,33 @@
 //            console.log("calling sharedService.connect");
 //            sharedService.connect();
 //        }
+        $scope.pPid = undefined;
+        $scope.pFname = undefined;
+        $scope.pLname = undefined;
+        $scope.pEmail = undefined;
+        $scope.me = undefined;
 
-        $scope.gameState = {
-            playOrder: {
-                smallBlind: {
-                    "playerFirstName": null,
-                    "playerLastName": null,
-                    "playerEmail": null,
-                    "playerId": null,
-                    "holeCards": [null, null],
-                    "isDealer": false,
-                    "isBigBlind": false,
-                    "isAllIn": false,
-                    "actionOrder": 0,
-                    "action": null,
-                    "availableActions": null,
-                    "playerName": "null null",
-                    "playerNumber": 1,
-                    "eliminated": false,
-                    "isSmallBlined": false,
-                    "stack": -1
-                },
-                bigBlind: {
-                    "playerFirstName": null,
-                    "playerLastName": null,
-                    "playerEmail": null,
-                    "playerId": null,
-                    "holeCards": [null, null],
-                    "isDealer": false,
-                    "isBigBlind": false,
-                    "isAllIn": false,
-                    "actionOrder": 0,
-                    "action": null,
-                    "availableActions": null,
-                    "playerName": "null null",
-                    "playerNumber": 1,
-                    "eliminated": false,
-                    "isSmallBlined": false,
-                    "stack": -1
-                },
-                button: {
-                    "playerFirstName": null,
-                    "playerLastName": null,
-                    "playerEmail": null,
-                    "playerId": null,
-                    "holeCards": [null, null],
-                    "isDealer": false,
-                    "isBigBlind": false,
-                    "isAllIn": false,
-                    "actionOrder": 0,
-                    "action": null,
-                    "availableActions": null,
-                    "playerName": "null null",
-                    "playerNumber": 1,
-                    "eliminated": false,
-                    "isSmallBlined": false,
-                    "stack": -1
-                },
-                nextToAct: {
-                    "playerFirstName": null,
-                    "playerLastName": null,
-                    "playerEmail": null,
-                    "playerId": null,
-                    "holeCards": [null, null],
-                    "isDealer": false,
-                    "isBigBlind": false,
-                    "isAllIn": false,
-                    "actionOrder": 0,
-                    "action": null,
-                    "availableActions": null,
-                    "playerName": "null null",
-                    "playerNumber": 1,
-                    "eliminated": false,
-                    "isSmallBlined": false,
-                    "stack": -1
-                },
-                players: [{
-                        "playerFirstName": null,
-                        "playerLastName": null,
-                        "playerEmail": null,
-                        "playerId": null,
-                        "holeCards": [null, null],
-                        "isDealer": false,
-                        "isBigBlind": false,
-                        "isAllIn": false,
-                        "actionOrder": 0,
-                        "action": null,
-                        "availableActions": null,
-                        "playerName": "null null",
-                        "playerNumber": 1,
-                        "eliminated": false,
-                        "isSmallBlined": false,
-                        "stack": -1
-                    }, {
-                        "playerFirstName": null,
-                        "playerLastName": null,
-                        "playerEmail": null,
-                        "playerId": null,
-                        "holeCards": [null, null],
-                        "isDealer": false,
-                        "isBigBlind": false,
-                        "isAllIn": false,
-                        "actionOrder": 0,
-                        "action": null,
-                        "availableActions": null,
-                        "playerName": "null null",
-                        "playerNumber": 4,
-                        "eliminated": false,
-                        "isSmallBlined": false,
-                        "stack": -1
-                    }, {
-                        "playerFirstName": null,
-                        "playerLastName": null,
-                        "playerEmail": null,
-                        "playerId": null,
-                        "holeCards": [null, null],
-                        "isDealer": false,
-                        "isBigBlind": false,
-                        "isAllIn": false,
-                        "actionOrder": 0,
-                        "action": null,
-                        "availableActions": null,
-                        "playerName": "null null",
-                        "playerNumber": 3,
-                        "eliminated": false,
-                        "isSmallBlined": false,
-                        "stack": -1
-                    }, {
-                        "playerFirstName": null,
-                        "playerLastName": null,
-                        "playerEmail": null,
-                        "playerId": null,
-                        "holeCards": [null, null],
-                        "isDealer": false,
-                        "isBigBlind": false,
-                        "isAllIn": false,
-                        "actionOrder": 0,
-                        "action": null,
-                        "availableActions": null,
-                        "playerName": "null null",
-                        "playerNumber": 2,
-                        "eliminated": false,
-                        "isSmallBlined": false,
-                        "stack": -1
-                    }],
-                bigAmt: 0,
-                smallAmt: 0
-            },
-            pots: null,
-            board: {
-                board: [{
-                        "suit": "HEART",
-                        "rank": "TEN",
-                        "isBurned": false,
-                        "cardString": "ten_of_hearts"
-                    }, {
-                        "suit": "DIAMOND",
-                        "rank": "SEVEN",
-                        "isBurned": false,
-                        "cardString": "seven_of_diamonds"
-                    }, {
-                        "suit": "SPADE",
-                        "rank": "SEVEN",
-                        "isBurned": false,
-                        "cardString": "seven_of_spades"
-                    }, {
-                        "suit": "HEART",
-                        "rank": "EIGHT",
-                        "isBurned": false,
-                        "cardString": "eight_of_hearts"
-                    }, {
-                        "suit": "HEART",
-                        "rank": "KING",
-                        "isBurned": false,
-                        "cardString": "king_of_hearts"
-                    }],
-                flop: [{
-                        "suit": "HEART",
-                        "rank": "TEN",
-                        "isBurned": false,
-                        "cardString": "ten_of_hearts"
-                    }, {
-                        "suit": "DIAMOND",
-                        "rank": "SEVEN",
-                        "isBurned": false,
-                        "cardString": "seven_of_diamonds"
-                    }, {
-                        "suit": "SPADE",
-                        "rank": "SEVEN",
-                        "isBurned": false,
-                        "cardString": "seven_of_spades"
-                    }],
-                turn: {
-                    "suit": "HEART",
-                    "rank": "EIGHT",
-                    "isBurned": false,
-                    "cardString": "eight_of_hearts"
-                },
-                river: {
-                    "suit": "HEART",
-                    "rank": "KING",
-                    "isBurned": false,
-                    "cardString": "king_of_hearts"
-                }
+        $scope.gameState;
+        
+        $scope.findMe = function(element, index, arr){
+            if(element.playerId === $scope.pPid){
+                $scope.me = element;
             }
-        };
+        }
 
-        $rootScope.$on('gameState', function (event, updatedValues) {
-            $scope.gameState = updatedValues.gameState;
+        $rootScope.$on('gameState', function (event, broadcast) {
+            $scope.gameState = broadcast.gameState;            
+            $scope.gameState.players.forEach($scope.findMe);
             $scope.$apply();
             console.log("GameState:");
             console.log($scope.gameState);
+        });
+        
+        $rootScope.$on('pInfo', function (event, braodcast) {
+            $scope.pPid = braodcast.pid;
+            $scope.pFname = braodcast.fName;
+            $scope.pLname = braodcast.lName;
+            $scope.pEmail = braodcast.email;
         });
 
         var square = new ProgressBar.Square('#user', {

@@ -17,8 +17,11 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/option/option.css">
     </head>
     <body oncontextmenu="return false;" ng-cloak ng-controller="GameCtrl">
-        <div id="info">
-            <div class="p-name"></div>
+        <div id="info" ng-cloak> 
+            <div class="p-name animate-if" ng-cloak>PLAYER: {{pFname}} {{pLname}}</div>
+            <div class="p-stack">STACK: {{me ? me.stack : ''}}</div>
+            <div class="pot_total animate-if" ng-cloak>POT: {{gameState.pot.purse}}</div>
+            
             <div id="timer" data-timer="60"></div>
             
             <div id="progress"></div>
@@ -29,9 +32,11 @@ and open the template in the editor.
             <div id="table">
                 <div id="inner-table">
                     <div id="community">
-                        <section class="flop" ng-repeat="card in gameState.board.flop" ng-class="card.cardString"></section>
-                        <section class="turn" ng-model="gameState.board.turn" ng-class="gameState.board.turn.cardString"></section>
-                        <section class="river" ng-model="gameState.board.river" ng-class="gameState.board.river.cardString"></section>
+                        <section class="flop" ng-model="gameState.board.board[0]" ng-class="gameState.board.board[0].cardString"></section>
+                        <section class="flop" ng-model="gameState.board.board[1]" ng-class="gameState.board.board[1].cardString"></section>
+                        <section class="flop" ng-model="gameState.board.board[2]" ng-class="gameState.board.board[2].cardString"></section>
+                        <section class="turn" ng-model="gameState.board.board[3]" ng-class="gameState.board.board[3].cardString"></section>
+                        <section class="river" ng-model="gameState.board.board[4]" ng-class="gameState.board.board[4].cardString"></section>
                     </div>
                     
                     <div id="pot-container">
@@ -45,12 +50,29 @@ and open the template in the editor.
                     </div>
                     
                 </div>
-                <div class="p-space" id="user"></div>
+                <div class="p-space" id="opponent-left">
+                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                </div>
+                <div class="p-space" id="opponent-top">
+                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                </div>
+                <div class="p-space" id="opponent-right">
+                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                </div>
+                <div class="p-space" id="user">
+                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                </div>
             </div>
         </div>
 
 
-        <div id="option">option div</div>
+        <div id="option">
+            
+        </div>
         
         <dialog id="signInDialog">
             <span id="signInBanner">Sign In</span>

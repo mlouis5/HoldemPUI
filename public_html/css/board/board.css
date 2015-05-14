@@ -71,14 +71,39 @@ and open the template in the editor.
 }
 
 .p-space{
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    margin-left: -100px;
+    position: absolute;    
     width: 200px;
     height: 133px;
     border: 1px solid red;
     border-radius: 5px;
+}
+#user{
+    bottom: 5px;
+    left: 50%;
+    margin-left: -100px;
+}
+#opponent-left{
+    left: 5px;
+    top: 50%;
+    margin-top: -66.5px;
+}
+#opponent-right{
+    right: 5px;
+    top: 50%;
+    margin-top: -66.5px;
+}
+#opponent-top{
+    top: 5px;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.hole-card{
+    position: relative;
+    height: 130px;
+    width: 90px;
+    border: 1px solid green;
+    display: inline-block;
 }
 
 #pot-container{
@@ -105,8 +130,13 @@ and open the template in the editor.
     -moz-osx-font-smoothing: grayscale;
 }
 
+.card_back{
+    background:transparent url(../../images/cards/svg/card_back.svg) no-repeat center;
+    background-size: 181px 125px;
+}
+
 .ace_of_clubs{    
-    background:transparent url(../../images/cards/svg/ace_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/ace_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .ace_of_diamonds{    
@@ -123,7 +153,7 @@ and open the template in the editor.
 }
 
 .eight_of_clubs{    
-    background:transparent url(../../images/cards/svg/eight_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/eight_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .eight_of_diamonds{    
@@ -140,7 +170,7 @@ and open the template in the editor.
 }
 
 .five_of_clubs{    
-    background:transparent url(../../images/cards/svg/five_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/five_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .five_of_diamonds{    
@@ -157,7 +187,7 @@ and open the template in the editor.
 }
 
 .four_of_clubs{    
-    background:transparent url(../../images/cards/svg/four_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/four_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .four_of_diamonds{    
@@ -174,7 +204,7 @@ and open the template in the editor.
 }
 
 .jack_of_clubs{    
-    background:transparent url(../../images/cards/svg/jack_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/jack_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .jack_of_diamonds{    
@@ -191,7 +221,7 @@ and open the template in the editor.
 }
 
 .king_of_clubs{    
-    background:transparent url(../../images/cards/svg/king_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/king_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .king_of_diamonds{    
@@ -208,7 +238,7 @@ and open the template in the editor.
 }
 
 .nine_of_clubs{    
-    background:transparent url(../../images/cards/svg/nine_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/nine_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .nine_of_diamonds{    
@@ -225,7 +255,7 @@ and open the template in the editor.
 }
 
 .queen_of_clubs{    
-    background:transparent url(../../images/cards/svg/queen_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/queen_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .queen_of_diamonds{    
@@ -242,7 +272,7 @@ and open the template in the editor.
 }
 
 .seven_of_clubs{    
-    background:transparent url(../../images/cards/svg/seven_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/seven_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .seven_of_diamonds{    
@@ -259,7 +289,7 @@ and open the template in the editor.
 }
 
 .six_of_clubs{    
-    background:transparent url(../../images/cards/svg/six_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/six_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .six_of_diamonds{    
@@ -276,7 +306,7 @@ and open the template in the editor.
 }
 
 .ten_of_clubs{    
-    background:transparent url(../../images/cards/svg/ten_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/ten_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .ten_of_diamonds{    
@@ -293,7 +323,7 @@ and open the template in the editor.
 }
 
 .three_of_clubs{    
-    background:transparent url(../../images/cards/svg/three_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/three_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .three_of_diamonds{    
@@ -310,7 +340,7 @@ and open the template in the editor.
 }
 
 .two_of_clubs{    
-    background:transparent url(../../images/cards/svg/two_of_hearts.svg) no-repeat center;
+    background:transparent url(../../images/cards/svg/two_of_clubs.svg) no-repeat center;
     background-size: 181px 125px;
 }
 .two_of_diamonds{    
