@@ -10,26 +10,23 @@
 
     function GameController($scope, $rootScope, sharedService) {
 
-
-//        init();
-//
-//        function init() {
-//            console.log("calling sharedService.connect");
-//            sharedService.connect();
-//        }
+        $scope.me = {};
         $scope.pPid = undefined;
         $scope.pFname = undefined;
         $scope.pLname = undefined;
         $scope.pEmail = undefined;
-        $scope.me = undefined;
+        
+        $scope.me.player = undefined;
+        $scope.me.index = undefined;
 
         $scope.gameState;
         
         $scope.findMe = function(element, index, arr){
             if(element.playerId === $scope.pPid){
-                $scope.me = element;
+                $scope.me.player = element;
+                $scope.me.index = index;
             }
-        }
+        };
 
         $rootScope.$on('gameState', function (event, broadcast) {
             $scope.gameState = broadcast.gameState;            

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html ng-app="HoldemApp">
     <head>
-        <title>Holdem Poker</title>
+        <title>Hold'em Poker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,7 +19,7 @@ and open the template in the editor.
     <body oncontextmenu="return false;" ng-cloak ng-controller="GameCtrl">
         <div id="info" ng-cloak> 
             <div class="p-name animate-if" ng-cloak>PLAYER: {{pFname}} {{pLname}}</div>
-            <div class="p-stack">STACK: {{me ? me.stack : ''}}</div>
+            <div class="p-stack">STACK: {{me && me.player ? me.player.stack : ''}}</div>
             <div class="pot_total animate-if" ng-cloak>POT: {{gameState.pot.purse}}</div>
             
             <div id="timer" data-timer="60"></div>
@@ -51,20 +51,20 @@ and open the template in the editor.
                     
                 </div>
                 <div class="p-space" id="opponent-left">
-                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
-                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[0]" ng-class="me.player.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[1]" ng-class="me.player.holeCards[1].cardString"></section>
                 </div>
                 <div class="p-space" id="opponent-top">
-                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
-                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[0]" ng-class="me.player.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[1]" ng-class="me.player.holeCards[1].cardString"></section>
                 </div>
                 <div class="p-space" id="opponent-right">
-                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
-                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[0]" ng-class="me.player.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[1]" ng-class="me.player.holeCards[1].cardString"></section>
                 </div>
                 <div class="p-space" id="user">
-                    <section class="hole-card" ng-model="me.holeCards[0]" ng-class="me.holeCards[0].cardString"></section>
-                    <section class="hole-card" ng-model="me.holeCards[1]" ng-class="me.holeCards[1].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[0]" ng-class="me.player.holeCards[0].cardString"></section>
+                    <section class="hole-card" ng-model="me.player.holeCards[1]" ng-class="me.player.holeCards[1].cardString"></section>
                 </div>
             </div>
         </div>
